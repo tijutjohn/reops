@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player 
+	width="640" height="480" 
+	scaleMode="stretch" playbackType="STREAMING" 
+	isLive="false" autoPlay="true" updateInterval="250"
+	hasCaptions="false">
+	<playlist>
+		<mediaElement>
+			<id>akamai10yearf8512K</id>
+			<mimeType>video/x-flv</mimeType>
+			<streamType>recorded</streamType>
+			<deliveryType>streaming</deliveryType>
+			<media url="rtmp://cp67126.edgefcs.net/ondemand/mediapm/osmf/content/test/akamai_10_year_f8_512K" width="800" height="600" />
+			<!-- keyValueFacet namespace="http://www.osmf.org/captioning/1.0">
+				<key><![CDATA[uri]]></key>
+				<value type="class" class="org.osmf.utils.URL">
+					<url><![CDATA[http://mediapm.edgesuite.net/osmf/content/test/captioning/akamai_sample_caption.xml]]></url>
+				</value>
+			</keyValueFacet -->
+		</mediaElement>
+		<!-- sequence>
+			<mediaElement>
+				<id>akamai10yearf8512K</id>
+				<mimeType>video/x-flv</mimeType>
+				<streamType>recorded</streamType>
+				<deliveryType>streaming</deliveryType>
+				<media url="rtmp://cp67126.edgefcs.net/ondemand/mediapm/osmf/content/test/akamai_10_year_f8_512K" width="800" height="600" />
+				<keyValueFacet namespace="http://www.osmf.org/captioning/1.0">
+					<key><![CDATA[uri]]></key>
+					<value type="class" class="org.osmf.utils.URL">
+						<url><![CDATA[http://mediapm.edgesuite.net/osmf/content/test/captioning/akamai_sample_caption.xml]]></url>
+					</value>
+				</keyValueFacet>
+			</mediaElement>
+			<mediaElement>
+				<id>seeker</id>
+				<mimeType>video/x-flv</mimeType>
+				<streamType>recorded</streamType>
+				<deliveryType>progressive</deliveryType>
+				<media url="http://office.realeyes.com/sample_vids/seeker.flv" width="640" height="480" />
+			</mediaElement>
+		</sequence -->
+	</playlist>
+	
+	<skin path="assets/skins/RE_Skin.swf">
+		<skinElement id="controlBar"
+			elementClass="com.realeyes.osmfplayer.controls.ControlBar" 
+			initMethod="initControlBarInstance" 
+			scaleMode="NONE" 
+			hAdjust="0" vAdjust="0" 
+			vAlign="BOTTOM"
+			autoPosition="true"
+			draggable="true" 
+			autoHide="true" />
+		<skinElement id="loadingIndicator"
+			elementClass="com.realeyes.osmfplayer.controls.LoadingIndicator" 
+			initMethod="initLoadingIndicatorInstance" 
+			hAdjust="0" vAdjust="0"
+			vAlign="CENTER"
+			autoPosition="true" />
+		<skinElement id="closedCaptionField"
+			elementClass="com.realeyes.osmfplayer.controls.ClosedCaptionField" 
+			initMethod="initClosedCaptionFieldInstance" 
+			hAdjust="0" vAdjust="0" 
+			hAlign="RIGHT"
+			vAlign="CENTER"
+			autoPosition="true" />
+	</skin>
+</player>
