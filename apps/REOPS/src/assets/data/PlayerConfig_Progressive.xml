@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <player 
 	width="640" height="480" 
-	scaleMode="letterbox" playbackType="PROGRESSIVE" 
-	isLive="false" autoPlay="true" updateInterval="250">
+	scaleMode="letterbox" isLive="false" autoPlay="true" updateInterval="250">
 	<playlist>
 		<mediaElement>
 			<id>seeker</id>

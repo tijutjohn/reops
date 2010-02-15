@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <player 
 	width="640" height="480" 
-	scaleMode="stretch" playbackType="STREAMING" 
-	isLive="false" autoPlay="true" updateInterval="250"
+	scaleMode="stretch" isLive="false" autoPlay="true" updateInterval="250"
 	hasCaptions="true">
 	<playlist>
 		<mediaElement>
