@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player 
+	width="640" height="480" 
+	scaleMode="LETTERBOX" isLive="false" autoPlay="true" updateInterval="250"
+	hasCaptions="false">
+	<playlist>
+		<sequence> <!-- or parallel once we get layout going -->
+			<mediaElement>
+				<id>faery1</id>
+				<mimeType>video/x-flv</mimeType> <!-- video/x-flv, audio/mpeg, image/jpeg, image/gif, img/png etc. -->
+				<deliveryType>progressive</deliveryType> <!-- progressive -->
+				<media url="http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv"/>
+			</mediaElement>
+			<mediaElement>
+				<id>space</id>
+				<mimeType>video/x-flv</mimeType> <!-- video/x-flv, audio/mpeg, image/jpeg, image/gif, img/png etc. -->
+				<deliveryType>streaming</deliveryType> <!-- streaming -->
+				<media url="rtmp://cp67126.edgefcs.net/ondemand/mediapm/strobe/content/test/SpaceAloneHD_sounas_640_500_short"/>
+			</mediaElement>
+			<mediaElement>
+				<id>faery2</id>
+				<mimeType>video/x-flv</mimeType> <!-- video/x-flv, audio/mpeg, image/jpeg, image/gif, img/png etc. -->
+				<deliveryType>streaming</deliveryType> <!-- progressive -->
+				<media url="http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv"/>
+			</mediaElement>
+		</sequence>
+	</playlist>
+	<skin path="assets/skins/RE_Skin.swf">
+		<skinElement id="controlBar"
+			elementClass="com.realeyes.osmfplayer.controls.ControlBar" 
+			initMethod="initControlBarInstance" 
+			scaleMode="none" 
+			hAdjust="0" vAdjust="0" 
+			vAlign="BOTTOM"
+			autoPosition="true"
+			draggable="true" 
+			autoHide="true" />
+		<skinElement id="loadingIndicator"
+			elementClass="com.realeyes.osmfplayer.controls.LoadingIndicator" 
+			initMethod="initLoadingIndicatorInstance" 
+			hAdjust="0" vAdjust="0"
+			vAlign="CENTER"
+			autoPosition="true" />
+		<skinElement id="closedCaptionField"
+			elementClass="com.realeyes.osmfplayer.controls.ClosedCaptionField" 
+			initMethod="initClosedCaptionFieldInstance" 
+			hAdjust="0" vAdjust="0" 
+			hAlign="LEFT"
+			vAlign="TOP"
+			autoPosition="true" />
+	</skin>
+</player>

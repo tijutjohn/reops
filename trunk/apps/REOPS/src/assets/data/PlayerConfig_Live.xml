@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player 
+	width="640" height="480" 
+	scaleMode="stretch" isLive="true" autoPlay="true" updateInterval="250"
+	hasCaptions="false">
+	<mediaElement>
+		<mediaElement>
+			<id>seeker</id>
+			<mimeType>video/x-flv</mimeType>
+			<streamType>live</streamType>
+			<deliveryType>streaming</deliveryType>
+			<media url="rtmp://office.realeyes.com:1935/live/livetest" />
+		</mediaElement>
+	</mediaElement>
+	<skin path="assets/skins/core.swf">
+		<skinElement id="controlBar"
+			elementClass="com.realeyes.osmfplayer.controls.ControlBar" 
+			initMethod="initControlBarInstance" 
+			scaleMode="NONE" 
+			hAdjust="0" vAdjust="0" 
+			vAlign="TOP"
+			autoPosition="true"
+			draggable="true" 
+			autoHide="true" />
+		<skinElement id="loadingIndicator"
+			elementClass="com.realeyes.osmfplayer.controls.LoadingIndicator" 
+			initMethod="initLoadingIndicatorInstance" 
+			hAdjust="0" vAdjust="0"
+			vAlign="CENTER"
+			autoPosition="true" />
+		<skinElement id="closedCaptionField"
+			elementClass="com.realeyes.osmfplayer.controls.ClosedCaptionField" 
+			initMethod="initClosedCaptionFieldInstance" 
+			hAdjust="0" vAdjust="-40" 
+			hAlign="CENTER"
+			vAlign="BOTTOM"
+			autoPosition="true" />
+	</skin>
+</player>

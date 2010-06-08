@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player 
+	width="700" height="600" 
+	scaleMode="stretch" isLive="false" autoPlay="true" updateInterval="250"
+	hasCaptions="true">
+	<allowedDomains>
+		<domain url="www.realeyes.com" />
+		<domain url="localhost" />
+		<domain url="127.0.0.1" />
+	</allowedDomains>
+	<mediaElement>
+		<mediaElement>
+			<id>akamai10yearf8512K</id>
+			<mimeType>video/x-flv</mimeType>
+			<streamType>recorded</streamType>
+			<deliveryType>streaming</deliveryType>
+			<media url="rtmp://cp67126.edgefcs.net/ondemand/mediapm/osmf/content/test/akamai_10_year_f8_512K" width="800" height="600" />
+			<metaData namespace="http://www.osmf.org/captioning/1.0">
+				<value key="uri" type="class" class="org.osmf.utils.URL">
+					<url><![CDATA[http://mediapm.edgesuite.net/osmf/content/test/captioning/akamai_sample_caption.xml]]></url>
+				</value>
+			</metaData>
+		</mediaElement>
+		<!--sequence>
+			<mediaElement>
+				<id>akamai10yearf8512K</id>
+				<mimeType>video/x-flv</mimeType>
+				<streamType>recorded</streamType>
+				<deliveryType>streaming</deliveryType>
+				<media url="rtmp://cp67126.edgefcs.net/ondemand/mediapm/osmf/content/test/akamai_10_year_f8_512K" width="800" height="600" />
+				<keyValueFacet namespace="http://www.osmf.org/captioning/1.0">
+					<key><![CDATA[uri]]></key>
+					<value type="class" class="org.osmf.utils.URL">
+						<url><![CDATA[http://mediapm.edgesuite.net/osmf/content/test/captioning/akamai_sample_caption.xml]]></url>
+					</value>
+				</keyValueFacet>
+			</mediaElement>
+			<mediaElement>
+				<id>seeker</id>
+				<mimeType>video/x-flv</mimeType>
+				<streamType>recorded</streamType>
+				<deliveryType>progressive</deliveryType>
+				<media url="http://office.realeyes.com/sample_vids/seeker.flv" width="640" height="480" />
+			</mediaElement>
+		</sequence-->
+	</mediaElement>
+	
+	<!---->
+	<plugins>
+		<plugin path="http://mediapm.edgesuite.net/osmf/swf/AkamaiBasicStreamingPlugin.swf">
+			<metaData namespace="http://localhost/osmf/plugins/tracking/google">
+				<value key="testValue" type="string">
+					<id>test value</id>
+				</value>
+			</metaData>
+		</plugin>
+	</plugins>
+
+	<skin path="assets/skins/RE_Skin.swf">
+		<skinElement id="controlBar"
+			elementClass="com.realeyes.osmfplayer.controls.ControlBar" 
+			initMethod="initControlBarInstance" 
+			altElementClass="AltControlBar"
+			altWidthThreshold="300"
+			scaleMode="squeeze" 
+			hAdjust="0" vAdjust="0" 
+			hAlign="center"
+			vAlign="bottom"
+			autoPosition="true"
+			draggable="true" 
+			autoHide="true" />
+		<skinElement id="loadingIndicator"
+			elementClass="com.realeyes.osmfplayer.controls.LoadingIndicator" 
+			initMethod="initLoadingIndicatorInstance" 
+			hAdjust="0" vAdjust="0"
+			vAlign="CENTER"
+			autoPosition="true" />
+		<skinElement id="closedCaptionField"
+			elementClass="com.realeyes.osmfplayer.controls.ClosedCaptionField" 
+			initMethod="initClosedCaptionFieldInstance" 
+			hAdjust="0" vAdjust="0" 
+			hAlign="CENTER"
+			vAlign="BOTTOM"
+			autoPosition="true" />
+	</skin>
+</player>
+			

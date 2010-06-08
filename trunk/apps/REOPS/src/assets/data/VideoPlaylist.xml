@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist>
+	<video path="rtmp://office.realeyes.com/vod/AdobeMax2007_720p_700" img="assets/images/david.png" />
+	<video path="rtmp://office.realeyes.com/vod/sample" img="assets/images/myBadassSelf.png" />
+	<video path="rtmp://cp67126.edgefcs.net/ondemand/mediapm/osmf/content/test/akamai_10_year_f8_512K" img="assets/images/akamai10Year.png" />
+</playlist>
