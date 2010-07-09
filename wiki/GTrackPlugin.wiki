@@ -1,5 +1,5 @@
 #labels plugin
-#Configuration and usage of the GTrack Google Analytics OSMF Plugin
+*Configuration and usage of the GTrack Google Analytics OSMF Plugin*
 
 = Introduction =
 Working...
