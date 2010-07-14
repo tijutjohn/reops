@@ -2,7 +2,7 @@
 *Configuration and usage of the GTrack Google Analytics OSMF Plugin*
 
 = Introduction =
-Working...
+Working..
 
 = Usage =
 Working...
