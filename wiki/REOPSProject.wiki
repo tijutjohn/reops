@@ -1,3 +1,4 @@
+#sidebar TableOfContents
 #summary General & Set up Information for the main REOPS project
 
 = REOPS Flash Builder Project =
