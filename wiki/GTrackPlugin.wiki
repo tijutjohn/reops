@@ -171,6 +171,7 @@ This will track the String 'AnalyticsTestVideo' instead of the URL of the media 
 		loadPlugin( {PATH_TO_GTRACK_PLUGIN_SWF} );
 	}
 }}}
+  # Set up a loadPlugin() method.
   # Create a URLResource that points to the GTrackPlugin.swf
 {{{
 	var pluginResource:MediaResourceBase = new URLResource( {PATH_TO_GTRACK_PLUGIN_SWF} ); 
