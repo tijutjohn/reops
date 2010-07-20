@@ -7,7 +7,10 @@
 The GTrack plugin has been built as an example of an OSMF proxy plugin. The plugin is able to send page tracking and event tracking for an OSMF MediaElement. The GTrack plugin uses the [http://code.google.com/p/gaforflash/ gaforflash] library to send tracking to google analytics.
 
 == Page Tracking ==
-Page tracking is per MediaElement. Basically when the MediaElement is loaded and begins to play the URL of the resource is sent as a pageView to Google Analytics. You can also configure the value that is sent by adding metadata to the URLResource for the MediaElement. An example of this can be found in the Configuration section. Events are sent to Google Analytics based on an XML configuration. Each of the MediaElements main traits can be configured to send a tracking event.
+Page tracking is per MediaElement. Basically when the MediaElement is loaded and begins to play the URL of the resource is sent as a pageView to Google Analytics. You can also configure the value that is sent by adding metadata to the URLResource for the MediaElement. An example of this can be found in the Configuration section. 
+
+== Event Tracking == 
+Events are sent to Google Analytics based on an XML configuration. Each of the MediaElements main traits can be configured to send a tracking event.
 
 = Configuration =
 The GTrack plugin determines which tracking should be sent and what values are sent to Google Analytics via XML configuration. 
@@ -69,14 +72,14 @@ This example will send tracking when the MediaElement has completed playing.
 The `<updateInterval>` node defines the interval that the GTrack plugin checks the current time and position of the currently playing MediaElement to determine when to send the time and/or percentage based tracking.
 
 === The `<debug>` node ===
-The `<debug>` node is not currently used but is planned to be implemented as a custom logging & debugging
+The `<debug>` node is not currently used but is planned to be implemented as a custom logging & debugging feature.
 
 == Node Attributes ==
 The node attributes (except for the name attribute) correspond to the tracking values defined in the [http://code.google.com/apis/analytics/docs/gaJS/gaJSApiEventTracking.html Google Analytics Tracking API for Event Tracking]
-  * category String  The general event category (e.g. "Videos").
-  * action   String  The action for the event (e.g. "Play").
-  * label    String  An optional descriptor for the event.
-  * value    Int     An optional value associated with the event. You can see your event values in the Overview, Categories, and Actions reports, where they are listed by event or aggregated across events, depending upon your report view.
+  * category: String - The general event category (e.g. "Videos").
+  * action: String - The action for the event (e.g. "Play").
+  * label: String - An optional descriptor for the event.
+  * value: Int - An optional value associated with the event. You can see your event values in the Overview, Categories, and Actions reports, where they are listed by event or aggregated across events, depending upon your report view.
 
 Sample XML configuration:
 {{{
@@ -139,6 +142,9 @@ Sample XML configuration:
 	<updateInterval><![CDATA[250]]></updateInterval>
 </value>
 }}}
+
+=== Page Tracking Setup ===
+*TODO*
 
 = Usage Example =
 *TODO*
