@@ -144,7 +144,7 @@ Sample XML configuration:
 }}}
 
 === Page Tracking Setup ===
-*TODO*
+#Add the 
 
 = Usage Example =
 *TODO*
