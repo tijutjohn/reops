@@ -1,6 +1,6 @@
-*Configuration and usage of the GTrack Google Analytics OSMF Plugin*
 #labels plugin
 #sidebar TableOfContents
+*Configuration and usage of the GTrack Google Analytics OSMF Plugin*
 <wiki:toc max_depth="1" />
 
 = Introduction =
