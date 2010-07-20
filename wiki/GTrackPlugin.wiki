@@ -12,7 +12,7 @@ Page tracking is per MediaElement. Basically when the MediaElement is loaded and
 = Configuration =
 The GTrack plugin determines which tracking should be sent and what values are sent to Google Analytics via XML configuration. 
 
-=== The <account> node ===
+=== The '<account>' node ===
 This node specifies the Google Account to associate the tracking with. You can specify multiple <account> nodes to send tracking to multiple accounts. The value for this node can be found in your Google Analytics account and should look similar to - 'UA-1234567-1'.
 Example: 
 {{{
@@ -20,15 +20,15 @@ Example:
 	<account><![CDATA[UA-1782464-5]]></account>
 }}}
 
-=== The <url> node ===
-The <url> node is the URL that was set as the profile URL to be tracked by Google Analytics.
+=== The '<url>' node ===
+The '<url>' node is the URL that was set as the profile URL to be tracked by Google Analytics.
 Example:
 {{{
 	<url><![CDATA[http://osmf.realeyes.com]]></url>
 }}}
 
-=== The <event> node ===
-The <event> node is what defines the tracking that will be sent to your Google Analytics account. The 'name' attribute of the node is the key that tells the GTrack plugin to send an event. So, the names much match exactly. There are multiple types of events that can be tracked:
+=== The '<event>' node ===
+The '<event>' node is what defines the tracking that will be sent to your Google Analytics account. The 'name' attribute of the node is the key that tells the GTrack plugin to send an event. So, the names much match exactly. There are multiple types of events that can be tracked:
 
 ==== Percent watched ====
 Example:
@@ -61,11 +61,11 @@ Example:
 }}}
 This example will send tracking when the MediaElement has completed playing. 
 
-=== The <updateInterval> node ===
-The <updateInterval> node defines the interval that the GTrack plugin checks the current time and position of the currently playing MediaElement to determine when to send the time and/or percentage based tracking.
+=== The '<updateInterval>' node ===
+The '<updateInterval>' node defines the interval that the GTrack plugin checks the current time and position of the currently playing MediaElement to determine when to send the time and/or percentage based tracking.
 
-=== The <debug> node ===
-The debug node is not currently used but is planned to be implemented as a custom logging & debugging
+=== The '<debug>' node ===
+The '<debug>' node is not currently used but is planned to be implemented as a custom logging & debugging
 
 == Node Attributes ==
 The node attributes (except for the name attribute) correspond to the tracking values defined in the [http://code.google.com/apis/analytics/docs/gaJS/gaJSApiEventTracking.html Google Analytics Tracking API for Event Tracking]
