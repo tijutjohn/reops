@@ -1,7 +1,7 @@
+*Configuration and usage of the GTrack Google Analytics OSMF Plugin*
 #labels plugin
 #sidebar TableOfContents
 <wiki:toc max_depth="1" />
-*Configuration and usage of the GTrack Google Analytics OSMF Plugin*
 
 = Introduction =
 The GTrack plugin has been built as an example of an OSMF proxy plugin. The plugin is able to send page tracking and event tracking for an OSMF MediaElement. The GTrack plugin uses the [http://code.google.com/p/gaforflash/ gaforflash] library to send tracking to google analytics.
