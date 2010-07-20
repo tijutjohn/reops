@@ -207,7 +207,7 @@ This will track the String 'AnalyticsTestVideo' instead of the URL of the media 
 		mediaFactory.loadPlugin( pluginResource );
 	}
 }}}
-  # Once the plugin is loaded, load your media
+  # Once the plugin is loaded, remove the plugin listeners and load the media
 {{{
 	protected function onPluginLoaded( event:MediaFactoryEvent ):void
 	{
