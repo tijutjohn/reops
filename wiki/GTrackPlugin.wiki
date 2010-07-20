@@ -204,17 +204,11 @@ This will track the String 'AnalyticsTestVideo' instead of the URL of the media 
 {{{
 	protected function onPluginLoaded( event:MediaFactoryEvent ):void
 	{
-		trace( "loadMedia()" );
-		//the pointer to the media
+		removeMediaFactoryEventListeners();
+	
 		var resource:URLResource = new URLResource( PROGRESSIVE_PATH );
-
-		// Add the metadata to track a "page" view for the video
 		resource.addMetadataValue( GTRACK_NAMESPACE, {pageURL:"AnalyticsTestVideo"} );
-
-		// Creates and sets the MediaElement (generic) with a resource and path
 		var element:MediaElement = mediaFactory.createMediaElement( resource );
-
-		// Add the media element
 		player.media = element;
 		container.addMediaElement( element );
 	}
