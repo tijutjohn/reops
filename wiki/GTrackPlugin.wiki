@@ -160,13 +160,63 @@ Sample XML configuration:
 This will track the String 'AnalyticsTestVideo' instead of the URL of the media resource.
 
 = Usage Example =
-  # Create a MediaResourceBase (URLResource or PluginResource)
-{{{ 
-	var pluginResource:MediaResourceBase = new URLResource( source ); 
+  # Set up the player
+{{{
+	protected function initPlayer():void
+	{
+		mediaFactory = new DefaultMediaFactory();
+		player = new MediaPlayer();
+		container = new MediaContainer();			
+		this.addChild( container );
+		loadPlugin( {PATH_TO_GTRACK_PLUGIN_SWF} );
+	}
 }}}
-  # Add the configuration XML data as a MetaData value to the resource (gTrackPluginConfigXML is an XML variable)
-{{{ 
-	pluginResource.addMetadataValue( "http://www.realeyes.com/osmf/plugins/tracking/google", gTrackPluginConfigXML ); 
+  # Create a URLResource that points to the GTrackPlugin.swf
+{{{
+	var pluginResource:MediaResourceBase = new URLResource( {PATH_TO_GTRACK_PLUGIN_SWF} ); 
+}}}
+  # Add the XML configuration to the pluginResource as a MetaData value - 'gTrackPluginConfigXML' is an XML variable
+{{{
+	pluginResource.addMetadataValue( "http://www.realeyes.com/osmf/plugins/tracking/google", gTrackPluginConfigXML );
+}}}
+  # Listen for the plugin load events
+{{{
+	mediaFactory.addEventListener( MediaFactoryEvent.PLUGIN_LOAD, onPluginLoaded );
+	mediaFactory.addEventListener( MediaFactoryEvent.PLUGIN_LOAD_ERROR, onPluginLoadFailed );
+}}}
+  # Load the plugin
+{{{
+	mediaFactory.loadPlugin( pluginResource );
+}}}
+  # The loadPlugin() method should look something like: 
+{{{
+	private function loadPlugin( source:String ):void
+	{
+		var pluginResource:MediaResourceBase = new URLResource( source );
+		pluginResource.addMetadataValue( GTRACK_NAMESPACE, AnalyticsSampleData.gTrackPluginConfigXML );
+		mediaFactory.addEventListener( MediaFactoryEvent.PLUGIN_LOAD, onPluginLoaded );
+		mediaFactory.addEventListener( MediaFactoryEvent.PLUGIN_LOAD_ERROR, onPluginLoadFailed );
+		mediaFactory.loadPlugin( pluginResource );
+	}
+}}}
+  # Once the plugin is loaded, load your media
+{{{
+	protected function onPluginLoaded( event:MediaFactoryEvent ):void
+	{
+		trace( "loadMedia()" );
+		//the pointer to the media
+		var resource:URLResource = new URLResource( PROGRESSIVE_PATH );
+
+		// Add the metadata to track a "page" view for the video
+		resource.addMetadataValue( GTRACK_NAMESPACE, {pageURL:"AnalyticsTestVideo"} );
+
+		// Creates and sets the MediaElement (generic) with a resource and path
+		var element:MediaElement = mediaFactory.createMediaElement( resource );
+
+		// Add the media element
+		player.media = element;
+		container.addMediaElement( element );
+	}
 }}}
 
 = Licence =
