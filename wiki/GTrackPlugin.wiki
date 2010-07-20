@@ -145,20 +145,29 @@ Sample XML configuration:
 
 === Page Tracking Setup ===
   # Add the `<event>` node to the XML configuration
-{{{ <event name="complete" category="video" action="complete" label="trackingTesting" value="1" /> }}}
+{{{ 
+	<event name="complete" category="video" action="complete" label="trackingTesting" value="1" /> 
+}}}
   # Add a MetadataValue to the URLResource object for the MediaElement
 {{{
 	var resource:URLResource = new URLResource( PROGRESSIVE_PATH );
 	resource.addMetadataValue( GTRACK_NAMESPACE, {pageURL:"AnalyticsTestVideo"} );
 }}}
   # Create the MediaElement
-{{{	var element:MediaElement = mediaFactory.createMediaElement( resource ); }}}
+{{{	
+	var element:MediaElement = mediaFactory.createMediaElement( resource ); 
+}}}
+This will track the String 'AnalyticsTestVideo' instead of the URL of the media resource.
 
 = Usage Example =
   # Create a MediaResourceBase (URLResource or PluginResource)
-{{{ var pluginResource:MediaResourceBase = new URLResource( source ); }}}
+{{{ 
+	var pluginResource:MediaResourceBase = new URLResource( source ); 
+}}}
   # Add the configuration XML data as a MetaData value to the resource (gTrackPluginConfigXML is an XML variable)
-{{{ pluginResource.addMetadataValue( "http://www.realeyes.com/osmf/plugins/tracking/google", gTrackPluginConfigXML ); }}}
+{{{ 
+	pluginResource.addMetadataValue( "http://www.realeyes.com/osmf/plugins/tracking/google", gTrackPluginConfigXML ); 
+}}}
 
 = Licence =
   * The gaforflash API  is released under a [http://www.apache.org/licenses/LICENSE-2.0 Apache License 2.0]
