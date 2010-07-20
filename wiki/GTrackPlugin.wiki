@@ -53,9 +53,9 @@ This configuration example will track the start, 25, 50 & 75 percent markers as 
 Example: 
 {{{
 	<event name="timeWatched" category="video" action="timeWatched">
-		<marker time="5" label="start" />
-		<marker time="10" label="start" />
-		<marker time="20" label="start" />
+		<marker time="5" label="5sec" />
+		<marker time="10" label="10sec" />
+		<marker time="20" label="20sec" />
 	</event>
 }}}
 This example will send tracking at 5, 10, & 20 seconds respectively
