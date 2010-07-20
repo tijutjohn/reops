@@ -87,10 +87,10 @@ Sample XML configuration:
 	<!-- You can track to multiple analytics accounts by adding additional <account /> nodes -->
 	<!-- <account><![CDATA[{ADDITIONAL_GA_ID}]]></account> -->
 	
-	<!-- //Marker 4: Set the url that you registered with your GA account -->
+	<!-- Set the url that you registered with your GA account -->
 	<url><![CDATA[http://osmf.realeyes.com]]></url>
 	
-	<!-- //Marker 5: Set up the percent based tracking -->
+	<!-- Set up the percent based tracking -->
 	<event name="percentWatched" category="video" action="percentWatched">
 		<marker percent="0" label="start" />
 		<marker percent="25" label="view" />
@@ -98,10 +98,10 @@ Sample XML configuration:
 		<marker percent="75" label="view" />
 	</event>
 	
-	<!-- //Marker 6: Set up the event tracking for the completed event -->
+	<!-- Set up the event tracking for the completed event -->
 	<event name="complete" category="video" action="complete" label="trackingTesting" value="1" />
 
-	<!-- //Marker 7: Set up the event tracking for the completed event -->
+	<!-- Set up the event tracking for the completed event -->
 	<event name="pageView" />
 	
 	<!-- These are the other available events that can be tracked -->
