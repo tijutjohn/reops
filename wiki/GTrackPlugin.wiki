@@ -193,10 +193,17 @@ This will track the String 'AnalyticsTestVideo' instead of the URL of the media 
 {{{
 	private function loadPlugin( source:String ):void
 	{
+		// Create the plugin resource
 		var pluginResource:MediaResourceBase = new URLResource( source );
-		pluginResource.addMetadataValue( GTRACK_NAMESPACE, AnalyticsSampleData.gTrackPluginConfigXML );
+		
+		// Add the configuration data as Metadata to the pluginResource
+		pluginResource.addMetadataValue( GTRACK_NAMESPACE, gTrackPluginConfigXML );
+		
+		// Set up the plugin listeners
 		mediaFactory.addEventListener( MediaFactoryEvent.PLUGIN_LOAD, onPluginLoaded );
 		mediaFactory.addEventListener( MediaFactoryEvent.PLUGIN_LOAD_ERROR, onPluginLoadFailed );
+		
+		// Load the plugin
 		mediaFactory.loadPlugin( pluginResource );
 	}
 }}}
@@ -204,11 +211,17 @@ This will track the String 'AnalyticsTestVideo' instead of the URL of the media 
 {{{
 	protected function onPluginLoaded( event:MediaFactoryEvent ):void
 	{
+		// Remove the plugin listeners
 		mediaFactory.removeEventListener( MediaFactoryEvent.PLUGIN_LOAD, onPluginLoaded );
 		mediaFactory.removeEventListener( MediaFactoryEvent.PLUGIN_LOAD_ERROR, onPluginLoadFailed );
-
+		
+		// Create the media resource
 		var resource:URLResource = new URLResource( PROGRESSIVE_PATH );
-		resource.addMetadataValue( GTRACK_NAMESPACE, {pageURL:"AnalyticsTestVideo"} );
+		
+		// Set up the page tracking
+		resource.addMetadataValue( GTRACK_NAMESPACE, { pageURL:"AnalyticsTestVideo" } );
+		
+		// Create & set the MediaElement
 		var element:MediaElement = mediaFactory.createMediaElement( resource );
 		player.media = element;
 		container.addMediaElement( element );
