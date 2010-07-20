@@ -41,9 +41,9 @@ Example:
 {{{
 	<event name="percentWatched" category="video" action="percentWatched">
 		<marker percent="0" label="start" />
-		<marker percent="25" label="view" />
-		<marker percent="50" label="view" />
-		<marker percent="75" label="view" />
+		<marker percent="25" label="25PercentView" />
+		<marker percent="50" label="50PercentView" />
+		<marker percent="75" label="75PercentView" />
 	</event>
 }}}
 This configuration example will track the start, 25, 50 & 75 percent markers as the media item is played. The complete is tracked by the complete event see MediaElement Events below.
