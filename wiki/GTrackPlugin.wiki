@@ -228,6 +228,9 @@ This will track the String 'AnalyticsTestVideo' instead of the URL of the media 
 	}
 }}}
 
+= Source =
+http://code.google.com/p/reops/source/browse/#svn/trunk/plugins/tracking/google/GTrackPlugin
+
 = Licence =
   * The gaforflash API  is released under a [http://www.apache.org/licenses/LICENSE-2.0 Apache License 2.0]
   * The REOPS project & the GTrack OSMF Plugin is released under the [http://www.mozilla.org/MPL/ Mozilla Public License 1.1]
