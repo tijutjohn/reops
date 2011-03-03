@@ -15,6 +15,7 @@ package com.realeyes.osmf.plugins.tracking.util
 		//////////////////////////////////////
 		
 		private var _currentTime:int = 0;
+		private var _previousCurrentTime:int = 0;
 		private var _duration:int = 0;
 		private var _timeViewed:Number = 0;
 		private var _timeCompare:Number = 0;
@@ -39,14 +40,10 @@ package com.realeyes.osmf.plugins.tracking.util
 		public function checkTime( currentTime:Number, duration:Number ):void
 		{
 			_duration = duration;
+			_previousCurrentTime = _currentTime;
 			_currentTime = currentTime;
 			
-			if( _timeCompare > 0 )
-			{
-				_timeViewed += ( new Date().getTime() - _timeCompare ) / 1000;
-			}
-			
-			_timeCompare = new Date().getTime();
+			_timeViewed = _currentTime;
 			
 			checkTimeMarkers();
 			checkPercentMarkers();

@@ -381,7 +381,7 @@ package com.realeyes.osmf.plugins.tracking.element
 		protected function processPlayStateChange( event:PlayEvent ):void
 		{
 			var playState:String = event.playState;
-			//trace( "processPlayStateChange: " + playState );
+			////trace( "processPlayStateChange: " + playState );
 			
 			if( playState == PlayState.STOPPED )
 			{
@@ -391,6 +391,22 @@ package com.realeyes.osmf.plugins.tracking.element
 			{
 				_currentTimeTimer.start();				
 			}
+			
+			switch(event.playState)
+			{
+				case PlayState.PLAYING:
+				{
+					_currentTimeTimer.start();
+					break;
+				}
+				case PlayState.STOPPED:
+				case PlayState.PAUSED:
+				{
+					_currentTimeTimer.stop();
+					break;
+				}
+			}
+			
 			
 			var trackEvent:TrackDefinition = _trackingConfig.getTrackEvent( TrackType.PLAY_STATE_CHANGE );
 			if( trackEvent )
