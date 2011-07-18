@@ -64,6 +64,7 @@ package com.realeyes.osmf.plugins.tracking.element
 	public class GTrackingProxyElement extends ProxyElement
 	{
 		static public const NS_PAGE_URL:String = "http://www.realeyes.com/osmf/plugins/tracking/google";
+		public static const DERIVED_RESOURCE_METADATA:String = "http://www.osmf.org/derivedResource/1.0"; // This is to pull out the meta data from URL resources that get obscured by the OSMF management of metadata
 		
 		//protected var _tracker:Tracker;
 		protected var _trackers:Array;
@@ -512,14 +513,26 @@ package com.realeyes.osmf.plugins.tracking.element
 			if( proxiedElement )
 			{
 				var pageURL:String;
-				var meta:Object = proxiedElement.resource.getMetadataValue( NS_PAGE_URL );
+				var resource:URLResource = proxiedElement.resource as URLResource;
+				
+				var derivedMetaDataResource:URLResource = resource.getMetadataValue( DERIVED_RESOURCE_METADATA ) as URLResource;
+				var meta:Object;
+				
+				if(derivedMetaDataResource)
+				{
+					meta = derivedMetaDataResource.getMetadataValue( NS_PAGE_URL );	
+				}
+				else
+				{
+					meta = resource.getMetadataValue( NS_PAGE_URL );
+				}
+				
 				if( meta )
 				{
 					pageURL = meta[ "pageURL" ] as String;
 				}
 				else
 				{
-					var resource:URLResource = proxiedElement.resource as URLResource;
 					if( resource )
 					{	
 						pageURL = resource.url;
