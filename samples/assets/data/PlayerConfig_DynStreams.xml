@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player 
+	width="640" height="480" 
+	scaleMode="letterbox" isLive="false" autoPlay="true" updateInterval="250">
+	<mediaElement>
+		<mediaElement>
+			<id>ElephantsDream</id>
+			<baseURL>rtmp://cp67126.edgefcs.net/ondemand</baseURL>
+			<mimeType>video/mp4</mimeType>
+			<streamType>recorded</streamType>
+			<deliveryType>streaming</deliveryType>
+			<media url="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_768x428_24.0fps_408kbps.mp4" bitrate="408000"/>
+			<media url="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_768x428_24.0fps_608kbps.mp4" bitrate="608000"/>
+			<media url="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_1024x522_24.0fps_908kbps.mp4" bitrate="908000"/>
+			<media url="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_1024x522_24.0fps_1308kbps.mp4" bitrate="1308000"/>
+			<media url="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_1280x720_24.0fps_1708kbps.mp4" bitrate="1708000"/>
+		</mediaElement>
+	</mediaElement>
+	<skin path="assets/skins/RE_Skin.swf">
+		<skinElement id="controlBar"
+			elementClass="com.realeyes.osmfplayer.controls.ControlBar" 
+			initMethod="initControlBarInstance" 
+			scaleMode="none" 
+			hAdjust="0" vAdjust="-17" 
+			vAlign="BOTTOM"
+			autoPosition="true"
+			draggable="true" 
+			autoHide="true" />
+		<skinElement id="loadingIndicator"
+			elementClass="com.realeyes.osmfplayer.controls.LoadingIndicator" 
+			initMethod="initLoadingIndicatorInstance" 
+			hAdjust="0" vAdjust="0"
+			vAlign="CENTER"
+			autoPosition="true" />
+		<skinElement id="closedCaptionField"
+			elementClass="com.realeyes.osmfplayer.controls.ClosedCaptionField" 
+			initMethod="initClosedCaptionFieldInstance" 
+			hAdjust="0" vAdjust="0" 
+			hAlign="LEFT"
+			vAlign="TOP"
+			autoPosition="true" />
+	</skin>
+	
+</player>

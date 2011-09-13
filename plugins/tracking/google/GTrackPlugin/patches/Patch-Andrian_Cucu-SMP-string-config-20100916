@@ -1,0 +1,41 @@
+Index: src/com/realeyes/osmf/plugins/tracking/GTrackPluginInfo.as
+===================================================================
+--- src/com/realeyes/osmf/plugins/tracking/GTrackPluginInfo.as	(revision 61)
++++ src/com/realeyes/osmf/plugins/tracking/GTrackPluginInfo.as	(working copy)
+@@ -49,7 +49,6 @@
+ 		
+ 		public function _createMediaElement():GTrackingProxyElement
+ 		{
+-			trace( "_createMediaElement()" );
+ 			// Create the tracking element
+ 			_trackingElement = new GTrackingProxyElement( null, _trackingConfig );
+ 			return _trackingElement;
+@@ -57,10 +56,24 @@
+ 		
+ 		override public function initializePlugin( resource:MediaResourceBase ):void
+ 		{
+-			trace( "initializePlugin()" );
+ 			// This is where we get the metadata associated with the resource, so we can pass in data here.
+-			var configXML:XML = resource.getMetadataValue( GTRACK_NS ) as XML;
+-			_trackingConfig = new GTrackConfiguration( configXML );
++			var configXML:XML;
++			var metadata:Object = resource.getMetadataValue( GTRACK_NS );
++			
++			if( metadata is String )
++			{
++				metadata = new XML( metadata )
++			}
++			
++			if( metadata is XML )
++			{
++				configXML = metadata as XML;
++				_trackingConfig = new GTrackConfiguration( configXML );
++			}
++			else
++			{
++				throw new Error( "GTrackPlugin expects XML configuration content" );
++			}
+ 		}
+ 	}
+ }
+\ No newline at end of file

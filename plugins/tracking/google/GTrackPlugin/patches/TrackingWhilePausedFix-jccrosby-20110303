@@ -1,0 +1,66 @@
+Index: src/com/realeyes/osmf/plugins/tracking/element/GTrackingProxyElement.as
+===================================================================
+--- src/com/realeyes/osmf/plugins/tracking/element/GTrackingProxyElement.as	(revision 62)
++++ src/com/realeyes/osmf/plugins/tracking/element/GTrackingProxyElement.as	(working copy)
+@@ -381,7 +381,7 @@
+ 		protected function processPlayStateChange( event:PlayEvent ):void
+ 		{
+ 			var playState:String = event.playState;
+-			//trace( "processPlayStateChange: " + playState );
++			////trace( "processPlayStateChange: " + playState );
+ 			
+ 			if( playState == PlayState.STOPPED )
+ 			{
+@@ -392,6 +392,22 @@
+ 				_currentTimeTimer.start();				
+ 			}
+ 			
++			switch(event.playState)
++			{
++				case PlayState.PLAYING:
++				{
++					_currentTimeTimer.start();
++					break;
++				}
++				case PlayState.STOPPED:
++				case PlayState.PAUSED:
++				{
++					_currentTimeTimer.stop();
++					break;
++				}
++			}
++			
++			
+ 			var trackEvent:TrackDefinition = _trackingConfig.getTrackEvent( TrackType.PLAY_STATE_CHANGE );
+ 			if( trackEvent )
+ 			{
+Index: src/com/realeyes/osmf/plugins/tracking/util/DurationTracker.as
+===================================================================
+--- src/com/realeyes/osmf/plugins/tracking/util/DurationTracker.as	(revision 62)
++++ src/com/realeyes/osmf/plugins/tracking/util/DurationTracker.as	(working copy)
+@@ -15,6 +15,7 @@
+ 		//////////////////////////////////////
+ 		
+ 		private var _currentTime:int = 0;
++		private var _previousCurrentTime:int = 0;
+ 		private var _duration:int = 0;
+ 		private var _timeViewed:Number = 0;
+ 		private var _timeCompare:Number = 0;
+@@ -39,15 +40,11 @@
+ 		public function checkTime( currentTime:Number, duration:Number ):void
+ 		{
+ 			_duration = duration;
++			_previousCurrentTime = _currentTime;
+ 			_currentTime = currentTime;
+ 			
+-			if( _timeCompare > 0 )
+-			{
+-				_timeViewed += ( new Date().getTime() - _timeCompare ) / 1000;
+-			}
++			_timeViewed = _currentTime;
+ 			
+-			_timeCompare = new Date().getTime();
+-			
+ 			checkTimeMarkers();
+ 			checkPercentMarkers();
+ 			checkCompleteMarkers();

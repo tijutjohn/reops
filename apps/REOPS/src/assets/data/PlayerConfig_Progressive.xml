@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player 
+	width="640" height="480" 
+	scaleMode="letterbox" isLive="false" autoPlay="true" updateInterval="250">
+	<mediaElement>
+		<mediaElement>
+			<id>seeker</id>
+			<mimeType>video/x-flv</mimeType>
+			<streamType>recorded</streamType>
+			<deliveryType>progressive</deliveryType>
+			<media url="http://dl.dropbox.com/u/2980264/OSMF/logo_animated.flv" />
+		</mediaElement>
+	</mediaElement>
+	<skin path="assets/skins/RE_Skin.swf">
+		<skinElement id="controlBar"
+			elementClass="com.realeyes.osmfplayer.controls.ControlBar" 
+			initMethod="initControlBarInstance" 
+			scaleMode="none" 
+			hAdjust="0" vAdjust="-12" 
+			vAlign="BOTTOM"
+			autoPosition="true"
+			draggable="true" 
+			autoHide="true" />
+		<skinElement id="loadingIndicator"
+			elementClass="com.realeyes.osmfplayer.controls.LoadingIndicator" 
+			initMethod="initLoadingIndicatorInstance" 
+			hAdjust="0" vAdjust="0"
+			vAlign="CENTER"
+			autoPosition="true" />
+		<skinElement id="closedCaptionField"
+			elementClass="com.realeyes.osmfplayer.controls.ClosedCaptionField" 
+			initMethod="initClosedCaptionFieldInstance" 
+			hAdjust="0" vAdjust="0" 
+			hAlign="LEFT"
+			vAlign="TOP"
+			autoPosition="true" />
+	</skin>
+</player>

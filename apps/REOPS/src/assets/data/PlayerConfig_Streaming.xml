@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player 
+	width="640" height="480" 
+	scaleMode="stretch" isLive="false" autoPlay="true" updateInterval="250"
+	hasCaptions="true">
+	<mediaElement>
+		<mediaElement>
+			<id>seeker</id>
+			<mimeType>video/x-flv</mimeType>
+			<streamType>recorded</streamType>
+			<deliveryType>streaming</deliveryType>
+			<media url="rtmp://cp67126.edgefcs.net/ondemand/mediapm/osmf/content/test/akamai_10_year_f8_512K" />
+			<metaData namespace="http://www.osmf.org/captioning/1.0">
+				<value key="uri" type="class" class="org.osmf.utils.URL">
+					<url><![CDATA[http://mediapm.edgesuite.net/osmf/content/test/captioning/akamai_sample_caption.xml]]></url>
+				</value>
+			</metaData>
+		</mediaElement>
+	</mediaElement>
+	<skin path="assets/skins/Core.swf">
+		<skinElement id="controlBar"
+			elementClass="com.realeyes.osmfplayer.controls.ControlBar" 
+			initMethod="initControlBarInstance" 
+			scaleMode="NONE" 
+			hAdjust="0" vAdjust="0" 
+			vAlign="TOP"
+			autoPosition="true"
+			draggable="true" 
+			autoHide="true" />
+		<skinElement id="loadingIndicator"
+			elementClass="com.realeyes.osmfplayer.controls.LoadingIndicator" 
+			initMethod="initLoadingIndicatorInstance" 
+			hAdjust="0" vAdjust="0"
+			vAlign="CENTER"
+			autoPosition="true" />
+		<skinElement id="closedCaptionField"
+			elementClass="com.realeyes.osmfplayer.controls.ClosedCaptionField" 
+			initMethod="initClosedCaptionFieldInstance" 
+			hAdjust="0" vAdjust="-40" 
+			hAlign="CENTER"
+			vAlign="BOTTOM"
+			autoPosition="true" />
+	</skin>
+	
+	<plugins>
+		<plugin path="http://mediapm.edgesuite.net/osmf/swf/AkamaiBasicStreamingPlugin.swf" />
+	</plugins>
+</player>
