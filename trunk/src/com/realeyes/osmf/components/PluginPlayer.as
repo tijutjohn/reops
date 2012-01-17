@@ -659,6 +659,13 @@ package com.realeyes.osmf.components
 			{
 				_netConnection = value;
 				dispatchEvent(new Event(NET_CONNECTION_CHANGE));
+				
+				if( _netConnection )
+				{
+					_netConnection.removeEventListener( NetStatusEvent.NET_STATUS, _onNetStatus );
+					_netConnection.addEventListener( NetStatusEvent.NET_STATUS, _onNetStatus, false, 0, true );
+					
+				}
 			}
 		}
 		
@@ -939,8 +946,8 @@ package com.realeyes.osmf.components
 				}
 			}
 			
-			
-			this.dispatchEvent( new Event( event.info.code ) );
+			trace(">> " + event.info.code);
+			this.dispatchEvent( new NetStatusEvent( event.info.code, false, false, event.info ) );
 			
 		}	
 
